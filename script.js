@@ -36,7 +36,7 @@ function play() {
     hiddenById('wellcome')
     showById('playground')
     continueGame()
-
+    document.addEventListener('keyup', keybord)
 
 }
 
@@ -45,6 +45,7 @@ function play() {
 
 function keybord(event) {
     let gamerpress = event.key;
+    
     let prasedKey = gamerpress.toLowerCase();
 
     let expectedKey = document.getElementById('Alphabet').innerText;
@@ -99,16 +100,6 @@ function clear(){
 
 
 
-
-
-
-
-
-
-
-
-
-
     continueGame()
 
 
@@ -117,7 +108,11 @@ function clear(){
 }
 
 
-
+function enterCheck(event){
+    if(event.key=="Enter"){
+        play()
+    }
+}
 
 
 
@@ -125,7 +120,7 @@ function clear(){
 
 let playBtn = document.getElementById('play');
 playBtn.addEventListener('click', play);
+document.addEventListener('keyup',enterCheck)
 let playAgain = document.getElementById('playAgain');
 playAgain.addEventListener('click', clear)
 
-document.addEventListener('keyup', keybord)
