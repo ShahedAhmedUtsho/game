@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Clash Pro</title>
+   
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    @font-face {
+        font-family: anton;
+        src: url(./assist/font/Anton-Regular.ttf);
+    }
+    .anton{
+        font-family: anton, Helvetica, sans-serif;
+    }
+    .textLarge{
+        font-size: clamp(6.875rem,calc((46/16 * 1rem) + (1vw - .62rem) * (100 * ((56/16) - (46/16))/(76.25 - 62))),3.5rem);line-height: .85;
+        text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.58);
+        
+    }
+    
+    .p{
+        font-size: clamp(1rem,calc((16/16 * 1rem) + (1vw - .62rem) * (100 * ((18/16) - (16/16))/(76.25 - 62))),1.125rem);
+line-height:26px;
+
+}
+
+    @media  screen and (max-width:800px) {
+        body{
+            background-color: red;
+        }
+        .textLarge{
+        font-size: clamp(4.875rem,calc((46/16 * 1rem) + (1vw - .62rem) * (100 * ((56/16) - (46/16))/(76.25 - 62))),3.5rem);
+        line-height: 1.1em;
+        text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.58);
+        
+    }
+    }
+</style>
+</head>
+<body class="" data-theme="light">
+    <main class=" h-screen  bg-[url('/assist/images/background.png')]   bg-[#010313] bg-kbc bg-no-repeat bg-center bg-contain ">
+<br>
+<section class="wellcome text-center     justify-center  mt-[33vh] max-w-[700px] mx-auto  " id="wellcome">
+    <h1 class="anton text-white textLarge mb-8 lg:mb-8  ">ALPHABET CLASH
+        </h1>
+        <h3 class="p text-white mb-8">
+            Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+        </h3>
+        <button id="play" class="btn bg-white text-black hover:text-white" type="button">
+Play now
+        </button>
+
+</section>
+
+
+<section class="playground  text-center  mt-[8vh] min-h-96 px-10  lg:mx-20 hidden" id="playground">
+    <div class="screan border-[15px] border-[#000000b3] border-solid lg:min-h-72 min-h-60 bg-[#ffffffb3] md:max-w-[800px] mx-auto md:mb-12 mb-12 flex justify-center items-center  " >
+        <div id="Alphabet" class=" uppercase text-[100px] font-serif ">
+            y
+        </div>
+
+
+
+    </div>
+
+    <div id="keybord" class="md:scale-110">
+
+        <div class="flex justify-center gap-1 my-1 w-full">
+            <kbd id="q" class="kbd">q</kbd>
+            <kbd id="w" class="kbd">w</kbd>
+            <kbd id="e" class="kbd">e</kbd>
+            <kbd id="r" class="kbd">r</kbd>
+            <kbd id="t" class="kbd">t</kbd>
+            <kbd id="y" class="kbd">y</kbd>
+            <kbd id="u" class="kbd">u</kbd>
+            <kbd id="i" class="kbd">i</kbd>
+            <kbd id="o" class="kbd">o</kbd>
+            <kbd id="p" class="kbd">p</kbd>
+          </div> 
+          <div class="flex justify-center gap-1 my-1 w-full">
+            <kbd id="a" class="kbd">a</kbd>
+            <kbd id="s" class="kbd">s</kbd>
+            <kbd id="d" class="kbd">d</kbd>
+            <kbd id="f" class="kbd">f</kbd>
+            <kbd id="g" class="kbd">g</kbd>
+            <kbd id="h" class="kbd">h</kbd>
+            <kbd id="j" class="kbd">j</kbd>
+            <kbd id="k" class="kbd ">k</kbd>
+            <kbd id="l" class="kbd">l</kbd>
+          </div> 
+          <div class="flex justify-center gap-1 my-1 w-full">
+            <kbd id="z" class="kbd">z</kbd>
+            <kbd id="x" class="kbd">x</kbd>
+            <kbd id="c" class="kbd">c</kbd>
+            <kbd id="v" class="kbd">v</kbd>
+            <kbd id="b" class="kbd">b</kbd>
+            <kbd id="n" class="kbd">n</kbd>
+            <kbd id="m" class="kbd">m</kbd>
+            <kbd id="/" class="kbd">/</kbd>
+          </div>
+
+
+    </div>
+
+    <div class="button-div  flex justify-between  md:max-w-[800px] mx-auto md:mb-12 mb-12 mt-10 lg:pt-20">
+        <button class="btn rounded-full w-32 text-xs  bg-[#894189] text-white border-none rounded-md">
+            Life
+            <img src="./assist/images/Group 23.svg" alt="">
+            <span id="lifeSpan">
+                3
+            </span>
+            
+        </button>
+        <button class="btn rounded-full w-32 p-1 text-base  bg-[#360490] text-white border-none ">
+            Score
+            <img src="./assist/images/monetization_on.svg" alt="">
+            <span id="scoreSpan">
+                0
+            </span>
+            
+        </button>
+        
+         
+    </div>
+</section>
+
+
+<section id="score" class=" bg-[#ffffff33] text-white border-2 h-48  w-72 mx-auto mt-[30vh] rounded-xl p-5 hidden">
+
+    <div class="content flex flex-col items-center gap-2">
+        <h2 class="font-bold text-4xl  "> Score:<span class="font-normal" id="lastScore">0</span></h2>
+
+    <button id="playAgain" class="btn bg-white font-bold uppercase text-black hover:text-white text-xs" type="button">play again</button>
+    <p>Practice will make you Pro</p>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
